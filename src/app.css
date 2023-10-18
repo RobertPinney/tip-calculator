@@ -1,0 +1,7 @@
+.bill,
+.service,
+.output {
+  display: flex;
+  height: 24px;
+  align-items: center;
+}
