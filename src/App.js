@@ -14,8 +14,6 @@ export default function App() {
   );
 }
 
-This is a test
-
 function Bill({ bill, setBill }) {
   return (
     <span className="bill">
