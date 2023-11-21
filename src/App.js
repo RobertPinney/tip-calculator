@@ -30,8 +30,8 @@ function Bill({ bill, setBill }) {
 function Service({ bill }) {
   const [myService, setMyService] = useState(0);
 
-  function handleService() {
-    myService({ bill });
+  function handelSelect() {
+    if 
   }
 
   return (
@@ -39,12 +39,14 @@ function Service({ bill }) {
       <span className="service">
         <p>How did you like the service?</p>
         <select>
-          <option onSelect={handleService}>Dissatisfied (0%)</option>
+          <option onChange={() => setMyService(121)}>Dissatisfied (0%)</option>
+          <option onSelect={handelSelect}>It was okay (5%)</option>
           <option onSelect={() => setMyService({ bill })}>
-            It was okay (5%)
+            It was good (10%)
           </option>
-          <option onSelect={handleService}>It was good (10%)</option>
-          <option onSelect={handleService}>Absolutely amazing! (20%)</option>
+          <option onSelect={() => setMyService({ bill })}>
+            Absolutely amazing! (20%)
+          </option>
         </select>
       </span>
       <span className="service">
@@ -55,16 +57,16 @@ function Service({ bill }) {
           <option>It was good (10%)</option>
           <option>Absolutely amazing! (20%)</option>
         </select>
+        {console.log(myService)}
       </span>
-      {console.log(myService)}
     </div>
   );
 }
 
 function Output({ bill }) {
   return (
-    <div>
-      <p>{`You pay $${bill} ($${bill} + $tip)`}</p>
+    <div className="output">
+      <p>{`You pay $ ($${bill} + $tip)`}</p>
     </div>
   );
 }
